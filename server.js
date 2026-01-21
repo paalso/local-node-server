@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const cors = require("cors");
 
 // Import API route handlers
 const quotesApi = require("./api/quotes");
+
+app.use(cors()); // Enable CORS for all routes
 
 app.use("/api/quotes", quotesApi);
 
